@@ -114,39 +114,58 @@
   }, { passive: true });
 
   // ---------- Services Accordion ----------
-  document.querySelectorAll('.accordion-header').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
+  const allItems = document.querySelectorAll('.accordion-item');
+
+  function closeItem(item) {
+    const body = item.querySelector('.accordion-body');
+    const btn = item.querySelector('.accordion-header');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      body.style.maxHeight = '0px';
+    });
+    item.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function openItem(item) {
+    const body = item.querySelector('.accordion-body');
+    const btn = item.querySelector('.accordion-header');
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    const onEnd = () => {
+      if (item.classList.contains('open')) {
+        body.style.maxHeight = 'none';
+      }
+      body.removeEventListener('transitionend', onEnd);
+    };
+    body.addEventListener('transitionend', onEnd);
+  }
+
+  allItems.forEach(item => {
+    item.querySelector('.accordion-header').addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      const body = item.querySelector('.accordion-body');
+
+      allItems.forEach(other => {
+        if (other !== item && other.classList.contains('open')) {
+          closeItem(other);
+        }
+      });
 
       if (isOpen) {
-        body.style.maxHeight = body.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          body.style.maxHeight = '0px';
-        });
-        item.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
+        closeItem(item);
       } else {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        body.style.maxHeight = body.scrollHeight + 'px';
-        body.addEventListener('transitionend', function handler() {
-          if (item.classList.contains('open')) {
-            body.style.maxHeight = '2000px';
-          }
-          body.removeEventListener('transitionend', handler);
-        });
+        openItem(item);
       }
     });
   });
 
-  // Set initial max-height for the default-open accordion
-  document.querySelectorAll('.accordion-item.open .accordion-body').forEach(body => {
-    body.style.maxHeight = body.scrollHeight + 'px';
-    requestAnimationFrame(() => {
-      body.style.maxHeight = '2000px';
-    });
+  // Initialize: set max-height on the default-open item so it's visible
+  allItems.forEach(item => {
+    if (item.classList.contains('open')) {
+      const body = item.querySelector('.accordion-body');
+      body.style.maxHeight = 'none';
+    }
   });
 
   // ---------- Contact form (placeholder) ----------
