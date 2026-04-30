@@ -21,7 +21,6 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#menu">Pricing</a></li>
           <li><a href="#testimonials">Reviews</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -75,7 +74,7 @@
     </div>
   </section>
 
-  <!-- ============ SERVICES ============ -->
+  <!-- ============ SERVICES (Accordion) ============ -->
   <section class="services section" id="services">
     <div class="container">
       <div class="section-header centered">
@@ -84,162 +83,247 @@
         <p class="section-desc">From the perfect cut to a full color transformation, every service is customized to your hair type, texture, and personal style.</p>
       </div>
 
-      <div class="services-grid--five">
-        <div class="service-card" data-animate>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M20 38c4-8 8-14 12-18 4 4 8 10 12 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 34c2.5-4 5-8 8-11 3 3 5.5 7 8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/></svg>
-          </div>
-          <h3>Lived-In Blonding</h3>
-          <p>Custom foil and blonding services designed for a natural, sun-kissed look that grows out beautifully. Starting at $200.</p>
-        </div>
+      <div class="accordion" id="servicesAccordion">
 
-        <div class="service-card" data-animate>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M32 16c-4 6-12 10-12 18a12 12 0 0024 0c0-8-8-12-12-18z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Color Services</h3>
-          <p>From toner refreshes to full grey coverage and all-over color, we&rsquo;ll find your perfect shade. Starting at $135.</p>
-        </div>
+        <!-- Lived-In Services (expanded by default) -->
+        <div class="accordion-item open">
+          <button class="accordion-header" aria-expanded="true">
+            <span class="accordion-title">Lived-In Services</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-grid">
 
-        <div class="service-card" data-animate>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M24 20l8 12-8 12M40 20l-8 12 8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Cuts &amp; Styling</h3>
-          <p>Precision cuts, maintenance trims, and bang shaping tailored to your hair type and lifestyle. Starting at $25.</p>
-        </div>
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Hair Color Consult</span>
+                  <span class="svc-card-price">$20.00</span>
+                </div>
+                <p class="svc-card-desc">$15 deposit required</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
 
-        <div class="service-card" data-animate>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M28 18v28M36 18v28M24 26h16M24 38h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Extensions</h3>
-          <p>Seamless, natural-looking extensions customized to add length, volume, or both. Consultation required.</p>
-        </div>
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Mini Foil (Face Frame)</span>
+                  <span class="svc-card-price">$200.00</span>
+                </div>
+                <p class="svc-card-desc">Mini Foil provides precise blonding at the hairline, finished with a glossy shine.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
 
-        <div class="service-card" data-animate>
-          <div class="service-icon">
-            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M26 22c0 6 2.5 10 6 10s6-4 6-10M22 42c2-4 6-6 10-6s8 2 10 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Special Occasion Styling</h3>
-          <p>Wash and styles, updos, and event-ready looks for your most important moments. Starting at $65.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Partial Custom Foil (Refresh)</span>
+                  <span class="svc-card-price">$275.00</span>
+                </div>
+                <p class="svc-card-desc">Maintain your blonde with our Partial Custom Foil service, perfect for refreshing between full blonding sessions.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
 
-  <!-- ============ SERVICE MENU / PRICE LIST ============ -->
-  <section class="price-list section" id="menu">
-    <div class="container">
-      <div class="section-header centered">
-        <p class="section-label">Full Menu</p>
-        <h2>Service Menu</h2>
-      </div>
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Full Custom Foil</span>
+                  <span class="svc-card-price">$375.00</span>
+                </div>
+                <p class="svc-card-desc">Full Custom Foil offers a tailored blonding service designed for those seeking to revitalize their hair. This treatment ensures maximum brightness and delivers a vibrant, long-lasting blonde that will look stunning for months.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
 
-      <div class="price-list-wrap">
-
-        <div class="price-category">
-          <h3 class="price-category-heading">Lived-In Services</h3>
-          <div class="price-item">
-            <span class="price-name">Hair Color Consult</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$20</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Mini Foil (Face Frame)</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$200</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Partial Custom Foil (Refresh)</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$275</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Full Custom Foil</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$375</span>
+            </div>
           </div>
         </div>
 
-        <div class="price-category">
-          <h3 class="price-category-heading">Traditional Services</h3>
-          <div class="price-item">
-            <span class="price-name">Toner / Color Gloss Refresh</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$135</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Toner &amp; Haircut</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$185</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Grey Coverage Touch Up</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$145</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Grey Coverage Touch Up + Haircut</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$195</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">All Over Color</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$250</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">All Over Color &amp; Haircut</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$295</span>
+        <!-- Traditional Services -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Traditional Services</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-grid">
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Toner / Color Gloss Refresh</span>
+                  <span class="svc-card-price">$135.00</span>
+                </div>
+                <p class="svc-card-desc">Neutralizes unwanted blonde tones and revitalizes faded color. Includes wash, blow dry, and styling. Haircut not included.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Toner &amp; Haircut</span>
+                  <span class="svc-card-price">$185.00</span>
+                </div>
+                <p class="svc-card-desc">&nbsp;</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Grey Coverage Touch Up</span>
+                  <span class="svc-card-price">$145.00</span>
+                </div>
+                <p class="svc-card-desc">Quick and effective solution for concealing grey hair, ensuring a seamless blend with your natural color.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Grey Coverage Touch Up + Haircut</span>
+                  <span class="svc-card-price">$195.00</span>
+                </div>
+                <p class="svc-card-desc">&nbsp;</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">All Over Color (No Blonding)</span>
+                  <span class="svc-card-price">$250.00</span>
+                </div>
+                <p class="svc-card-desc">All over single color.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">All Over Color &amp; Haircut</span>
+                  <span class="svc-card-price">$295.00</span>
+                </div>
+                <p class="svc-card-desc">This is not a lightening service. This service is to darken your hair overall.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        <div class="price-category">
-          <h3 class="price-category-heading">Cuts</h3>
-          <div class="price-item">
-            <span class="price-name">The Cut</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$85</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Dry Cut (Returning Clients Only)</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$65</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Bang Trim</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$25</span>
+        <!-- Cuts -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Cuts</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-grid">
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">The Cut</span>
+                  <span class="svc-card-price">$85.00</span>
+                </div>
+                <p class="svc-card-desc">&nbsp;</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Dry Cut</span>
+                  <span class="svc-card-price">$65.00</span>
+                </div>
+                <p class="svc-card-desc">Returning clients only. Maintenance trim, does not include wash or blow dry. Client must come in with clean, dry, smooth or straight hair.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Bang Trim</span>
+                  <span class="svc-card-price">$25.00</span>
+                </div>
+                <p class="svc-card-desc">Bang maintenance or adding curtain bangs. No hair wash, blow dry and style on bangs only.</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        <div class="price-category">
-          <h3 class="price-category-heading">Extensions</h3>
-          <div class="price-item">
-            <span class="price-name">Extension Consultation</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$30</span>
+        <!-- Extensions -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Extensions</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-grid">
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Extension Consultation</span>
+                  <span class="svc-card-price">$30.00</span>
+                </div>
+                <p class="svc-card-desc">&nbsp;</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
 
-        <div class="price-category">
-          <h3 class="price-category-heading">Style</h3>
-          <div class="price-item">
-            <span class="price-name">Wash &amp; Style</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$65</span>
-          </div>
-          <div class="price-item">
-            <span class="price-name">Special Occasions / Up-Dos</span>
-            <span class="price-dots"></span>
-            <span class="price-value">$85</span>
-          </div>
-        </div>
+        <!-- Style -->
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Style</span>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="accordion-body">
+            <div class="accordion-grid">
 
-        <div class="price-list-cta">
-          <a href="https://www.vagaro.com/paisleydiorhair1" class="btn btn-primary" target="_blank" rel="noopener">Book Now</a>
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Wash &amp; Style</span>
+                  <span class="svc-card-price">$65.00</span>
+                </div>
+                <p class="svc-card-desc">&nbsp;</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+              <div class="svc-card">
+                <div class="svc-card-top">
+                  <span class="svc-card-name">Special Occasions / Up-Dos</span>
+                  <span class="svc-card-price">$85.00</span>
+                </div>
+                <p class="svc-card-desc">&nbsp;</p>
+                <div class="svc-card-action">
+                  <a href="https://www.vagaro.com/paisleydiorhair1" class="btn-request" target="_blank" rel="noopener">Request</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
       </div>

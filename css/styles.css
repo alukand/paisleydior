@@ -397,128 +397,96 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  justify-items: center;
-}
-.services-grid .service-card:nth-child(4),
-.services-grid .service-card:nth-child(5) {
-  /* no special treatment needed — grid auto-places into centered row */
-}
-.service-card {
-  background: var(--white);
-  padding: 2.5rem 2rem;
-  border-radius: var(--radius-lg);
-  text-align: center;
-  transition: var(--transition);
-  opacity: 0;
-  transform: translateY(30px);
-  border: 1px solid transparent;
-  width: 100%;
-}
-.service-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  background: var(--blush);
-  border-color: var(--gold-30);
-}
-.service-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
-  color: var(--champagne-dark);
-  background: linear-gradient(160deg, var(--warm-white) 0%, var(--blush) 100%);
-  border-radius: 50%;
-  padding: 12px;
-}
-.service-card h3 {
-  font-family: var(--ff-serif);
-  font-size: var(--fs-h3);
-  font-weight: 500;
-  color: var(--espresso);
-  margin-bottom: .75rem;
-}
-.service-card p {
-  font-size: var(--fs-small);
-  color: var(--text-light);
-  line-height: 1.7;
-}
-
-/* 5-card layout: 3 top + 2 centered bottom */
-.services-grid--five {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 2rem;
-}
-.services-grid--five .service-card:nth-child(1) { grid-column: 1 / 3; }
-.services-grid--five .service-card:nth-child(2) { grid-column: 3 / 5; }
-.services-grid--five .service-card:nth-child(3) { grid-column: 5 / 7; }
-.services-grid--five .service-card:nth-child(4) { grid-column: 2 / 4; }
-.services-grid--five .service-card:nth-child(5) { grid-column: 4 / 6; }
-
 /* ============================================================
-   PRICE LIST
+   ACCORDION SERVICES
    ============================================================ */
-.price-list {
-  background: var(--white);
-}
-.price-list .section-header {
-  margin-bottom: clamp(2.5rem, 4vw, 4rem);
-}
-
-.price-list-wrap {
-  max-width: 700px;
+.accordion {
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.price-category {
-  margin-bottom: 3rem;
-}
-.price-category:last-child {
-  margin-bottom: 0;
-}
-.price-category-heading {
-  font-family: var(--ff-serif);
-  font-size: var(--fs-h3);
-  font-weight: 500;
-  color: var(--gold);
-  margin-bottom: 1.25rem;
-  padding-bottom: .5rem;
-  border-bottom: 1.5px solid var(--champagne);
+.accordion-item {
+  margin-bottom: .5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
-.price-item {
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: var(--warm-white);
+  border: none;
+  border-bottom: 1.5px solid var(--blush);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--ff-serif);
+}
+.accordion-header:hover {
+  background: var(--blush);
+}
+.accordion-title {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  color: var(--espresso);
+  letter-spacing: .5px;
+}
+.accordion-chevron {
+  color: var(--gold);
+  transition: transform .35s ease;
+  flex-shrink: 0;
+}
+.accordion-item.open .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .45s cubic-bezier(.4,0,.2,1);
+  background: var(--white);
+}
+.accordion-item.open .accordion-body {
+  max-height: 2000px;
+}
+
+.accordion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+/* ---------- Service Card (inside accordion) ---------- */
+.svc-card {
+  background: var(--warm-white);
+  border: 1px solid var(--blush);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+.svc-card:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--champagne);
+}
+.svc-card-top {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: .75rem 0;
-  border-bottom: 1px solid var(--blush);
+  gap: .75rem;
+  margin-bottom: .5rem;
 }
-.price-item:last-child {
-  border-bottom: none;
-}
-.price-name {
+.svc-card-name {
   font-family: var(--ff-sans);
   font-size: var(--fs-body);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--espresso);
-  flex-shrink: 0;
 }
-.price-dots {
-  flex: 1;
-  margin: 0 .75rem;
-  border-bottom: 1.5px dotted var(--gold-30);
-  min-width: 2rem;
-  align-self: center;
-  transform: translateY(-4px);
-}
-.price-value {
+.svc-card-price {
   font-family: var(--ff-sans);
   font-size: var(--fs-body);
   font-weight: 500;
@@ -526,10 +494,34 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   white-space: nowrap;
   flex-shrink: 0;
 }
-
-.price-list-cta {
-  text-align: center;
-  margin-top: 3rem;
+.svc-card-desc {
+  font-size: var(--fs-small);
+  color: var(--text-light);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.svc-card-action {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-request {
+  display: inline-block;
+  font-family: var(--ff-sans);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 22px;
+  border-radius: 50px;
+  background: var(--champagne);
+  color: var(--espresso);
+  transition: var(--transition);
+}
+.btn-request:hover {
+  background: var(--champagne-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
 }
 
 /* ============================================================
@@ -792,16 +784,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    RESPONSIVE
    ============================================================ */
 @media (max-width: 992px) {
-  .services-grid--five {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .services-grid--five .service-card:nth-child(1),
-  .services-grid--five .service-card:nth-child(2),
-  .services-grid--five .service-card:nth-child(3),
-  .services-grid--five .service-card:nth-child(4),
-  .services-grid--five .service-card:nth-child(5) {
-    grid-column: auto;
-  }
+  /* no special overrides needed at this breakpoint */
 }
 
 @media (max-width: 768px) {
@@ -835,16 +818,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
   .about-image { order: -1; }
 
-  /* Services */
-  .services-grid--five {
+  /* Accordion grid stacks on mobile */
+  .accordion-grid {
     grid-template-columns: 1fr;
-  }
-  .services-grid--five .service-card:nth-child(1),
-  .services-grid--five .service-card:nth-child(2),
-  .services-grid--five .service-card:nth-child(3),
-  .services-grid--five .service-card:nth-child(4),
-  .services-grid--five .service-card:nth-child(5) {
-    grid-column: auto;
   }
 
   /* Products */
