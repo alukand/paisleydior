@@ -26,14 +26,13 @@ A modern, responsive single-page website for hairstylist Paisley Dior. Built wit
 
 ## Color Palette
 
-| Token         | Hex       | Usage                     |
-|---------------|-----------|---------------------------|
-| Sage          | `#8A9A7B` | Primary / accents         |
-| Sage Light    | `#B5C4A8` | Borders, subtle elements  |
-| Sage Dark     | `#5E6E52` | Hover states              |
-| Cream         | `#FAF6F0` | Page background           |
-| Rose Gold     | `#C4A882` | Warm accents, stars       |
-| Charcoal      | `#2C2C2C` | Headings, footer          |
+| Token           | Hex       | Usage                              |
+|-----------------|-----------|------------------------------------|
+| Dark Espresso   | `#2c2420` | Nav (scrolled), footer, dark text  |
+| Champagne       | `#d4b896` | Primary accent, buttons, highlights|
+| Blush Nude      | `#e8d5c4` | Secondary backgrounds, card hovers |
+| Warm White      | `#f7f2ed` | Main background, card backgrounds  |
+| Muted Gold      | `#b09070` | Eyebrow text, subtle accents       |
 
 ## Adding Your Content
 

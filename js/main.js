@@ -121,7 +121,7 @@
     const originalText = btn.textContent;
     btn.textContent = 'Sent! We\'ll be in touch.';
     btn.disabled = true;
-    btn.style.background = 'var(--sage-dark)';
+    btn.style.background = 'var(--champagne-dark)';
     setTimeout(() => {
       form.reset();
       btn.textContent = originalText;
