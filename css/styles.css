@@ -362,6 +362,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .about-text .btn { margin-top: 1rem; }
 
+.about-photo {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+
 /* ---------- Image Placeholder ---------- */
 .image-placeholder {
   width: 100%;
