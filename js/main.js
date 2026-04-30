@@ -113,6 +113,42 @@
     }
   }, { passive: true });
 
+  // ---------- Services Accordion ----------
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      const body = item.querySelector('.accordion-body');
+
+      if (isOpen) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+          body.style.maxHeight = '0px';
+        });
+        item.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.addEventListener('transitionend', function handler() {
+          if (item.classList.contains('open')) {
+            body.style.maxHeight = '2000px';
+          }
+          body.removeEventListener('transitionend', handler);
+        });
+      }
+    });
+  });
+
+  // Set initial max-height for the default-open accordion
+  document.querySelectorAll('.accordion-item.open .accordion-body').forEach(body => {
+    body.style.maxHeight = body.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      body.style.maxHeight = '2000px';
+    });
+  });
+
   // ---------- Contact form (placeholder) ----------
   const form = document.getElementById('contactForm');
   form.addEventListener('submit', (e) => {
