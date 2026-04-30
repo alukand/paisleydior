@@ -1,6 +1,6 @@
-# Skin Rituals — Skincare Spa Website
+# Paisley Dior Hair — Website
 
-A modern, responsive single-page website for a skincare spa business. Built with vanilla HTML, CSS, and JavaScript — no frameworks or build tools required.
+A modern, responsive single-page website for hairstylist Paisley Dior. Built with vanilla HTML, CSS, and JavaScript — no frameworks or build tools required.
 
 ## Structure
 
