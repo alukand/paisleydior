@@ -17,23 +17,23 @@ A modern, responsive single-page website for hairstylist Paisley Dior. Built wit
 ## Features
 
 - **Responsive design** — works on mobile, tablet, and desktop
-- **Smooth scroll navigation** with sticky header that adapts on scroll
-- **Testimonials carousel** with autoplay, swipe support, and dot indicators
+- **5 service category cards** in a 3+2 centered grid layout
+- **Full service menu** with elegant price list and dotted-line formatting
+- **Testimonials carousel** with autoplay, swipe, and dot indicators
 - **Scroll-triggered animations** for service cards
 - **Mobile hamburger menu** with full-screen overlay
 - **Contact form** (front-end only — connect to your backend or service)
-- **Accessible** — semantic HTML, ARIA labels, focus states
+- **Vagaro integration** — all booking buttons link to Vagaro
 
 ## Color Palette
 
-| Token         | Hex       | Usage                     |
-|---------------|-----------|---------------------------|
-| Sage          | `#8A9A7B` | Primary / accents         |
-| Sage Light    | `#B5C4A8` | Borders, subtle elements  |
-| Sage Dark     | `#5E6E52` | Hover states              |
-| Cream         | `#FAF6F0` | Page background           |
-| Rose Gold     | `#C4A882` | Warm accents, stars       |
-| Charcoal      | `#2C2C2C` | Headings, footer          |
+| Token           | Hex       | Usage                              |
+|-----------------|-----------|------------------------------------|
+| Dark Espresso   | `#2c2420` | Nav (scrolled), footer, dark text  |
+| Champagne       | `#d4b896` | Primary accent, buttons, highlights|
+| Blush Nude      | `#e8d5c4` | Secondary backgrounds, card hovers |
+| Warm White      | `#f7f2ed` | Main background, card backgrounds  |
+| Muted Gold      | `#b09070` | Eyebrow text, subtle accents       |
 
 ## Adding Your Content
 
@@ -41,7 +41,7 @@ A modern, responsive single-page website for hairstylist Paisley Dior. Built wit
 Place your images in the `images/` folder and update the `src` attributes in `index.html`. Look for `<div class="image-placeholder">` elements — replace those with `<img>` tags.
 
 ### Copy
-All text content is in `index.html`. Search for placeholder text like "Your Address Here" or "Your Photo Here" and replace with your own.
+Update the remaining placeholder text (address, phone, email) in the contact section of `index.html`.
 
 ### Contact Form
 The form currently shows a success message client-side. To make it functional, connect it to a service like Formspree, Netlify Forms, or your own backend.
