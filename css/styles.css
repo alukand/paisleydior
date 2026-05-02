@@ -727,6 +727,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .contact-item p {
   color: var(--text-light);
 }
+.contact-hours-intro {
+  font-weight: 600;
+  font-size: var(--fs-small);
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.contact-item-policy p {
+  line-height: 1.75;
+}
 .contact-item a:hover {
   color: var(--champagne-dark);
 }
