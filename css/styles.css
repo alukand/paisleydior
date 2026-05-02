@@ -152,12 +152,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .header-inner {
-  max-width: var(--container);
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .logo {
