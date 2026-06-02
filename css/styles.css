@@ -676,10 +676,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: var(--warm-white);
 }
 .products-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 .products-text h2 {
   font-family: var(--ff-serif);
@@ -693,12 +692,35 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--text-light);
   margin-bottom: 1.25rem;
 }
-.products-photo {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  object-fit: cover;
-  aspect-ratio: 3/4;
+.products-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .9rem;
+  margin-top: 2rem;
+}
+.products-shop-btn {
+  background: #d4b896;
+  color: #2c2420;
+  padding: 18px 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  box-shadow: var(--shadow);
+}
+.products-shop-btn:hover {
+  background: var(--champagne-dark);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+.products-collection-link {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+.products-collection-link:hover {
+  color: var(--espresso);
 }
 
 /* ============================================================
@@ -858,12 +880,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .accordion-grid {
     grid-template-columns: 1fr;
   }
-
-  /* Products */
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-  .products-images { order: -1; }
 
   /* Contact */
   .contact-grid {
